@@ -78,7 +78,7 @@ function connectWebSocket() {
     } catch (error) {
     console.error("Failed to create WebSocket:", error);
     updateStatus("disconnected", "Connection failed");
-    addSystemMessage("❌ Failed to connect. Make sure server is running at ws://localhost:8080/ws");
+    addSystemMessage("❌ Failed to connect.");
     }
 }
 
@@ -180,5 +180,4 @@ connectWebSocket();
 // Add welcome message
 window.addEventListener("DOMContentLoaded", () => {
     addSystemMessage("Welcome! Connecting to WebSocket server...");
-    addSystemMessage("Make sure kabaw-sockets is running at ws://localhost:8080/ws");
 });
