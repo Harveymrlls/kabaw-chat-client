@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kabaw WebSocket Chat</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<h2>💬 Kabaw WebSocket Chat Client</h2>
+
+<div id="status" class="status disconnected">
+  <span class="status-indicator"></span>
+  <span id="statusText">Disconnected</span>
+</div>
+
+<div id="chat"></div>
+
+<div class="input-container">
+  <input type="text" id="messageInput" placeholder="Type a message..." disabled />
+  <button id="sendButton" onclick="sendMessage()" disabled>Send</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
