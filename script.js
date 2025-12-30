@@ -32,15 +32,15 @@ function connectWebSocket() {
             const content = data.content;
             const timestamp = data.timestamp;
             
-            // Check if this is likely our own message being echoed back
+            // Check if this is likely own message being echoed back
             const isOurMessage = lastSentMessage && 
                                 content === lastSentMessage && 
-                                Date.now() - lastSentTime < 1000; // Within 1 second
+                                Date.now() - lastSentTime < 1000; 
             
             if (isOurMessage) {
-            // This is our own message echo - ignore it
+            // This is own message echo - ignore it
             console.log("Ignoring echo of our own message:", content);
-            lastSentMessage = null; // Reset so we don't ignore future messages
+            lastSentMessage = null; 
             return;
             }
             
@@ -96,10 +96,9 @@ function sendMessage() {
     lastSentMessage = message;
     lastSentTime = Date.now();
     
-    // Show our message immediately (as "You")
+    // Show message immediately (as "You")
     addChatMessage("You", message, new Date().toISOString(), true);
     
-    // Send message - use the format that matches the server's response
     const messageObj = {
         type: "message",
         content: message,
